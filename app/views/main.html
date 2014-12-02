@@ -1,23 +1,27 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div class="list-wrapper">
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+  <div class="add-todo">
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+    <form ng-submit="addTodo()">
+      <input id="todo-summary"
+        type="text"
+        class="form-control"
+        placeholder="Enter task summary"
+        ng-minlength="3"
+        ng-model="newTodoSummary"
+        required />
+      <button class="btn btn-success">Add to list</button>
+    </form>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  </div>
+
+  <div class="todo-list">
+    <ul>
+      <li single-todo 
+        ng-repeat="todo in todoCollection.models"
+        ng-model="todo">
+      </li>
+    </ul>
+  </div>
+
 </div>

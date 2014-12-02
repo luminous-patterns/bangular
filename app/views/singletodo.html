@@ -1,0 +1,13 @@
+<div ng-dblclick="editSummary()"
+  ng-show="!editingSummary"
+  ng-bind="ngModel.attributes.Summary"></div>
+
+<div ng-show="editingSummary">
+  <form ng-submit="saveSummary()">
+    <input type="text" 
+      class="form-control"
+      ng-model="ngModel.attributes.Summary" />
+  </form>
+</div>
+
+<a href ng-click="delete()">Delete</a>

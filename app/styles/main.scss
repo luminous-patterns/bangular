@@ -1,6 +1,62 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+
+
+.add-todo {
+
+  height: 34px;
+  position: relative;
+
+  button.btn.btn-success {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 145px;
+  }
+  input#todo-summary {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 550px;
+  }
+
+}
+
+div.todo-list {
+
+  ul {
+
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+
+    li {
+
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+
+      &:hover a {
+        display: inline-block;
+      }
+      div {
+        display: inline-block;
+      }
+      a {
+        float: right;
+        display: none;
+      }
+
+    }
+
+  }
+
+}
+
 
 .browsehappy {
   margin: 0.2em 0;
@@ -71,6 +127,7 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
+    margin-top: 100px;
   }
 
   /* Remove the padding we set earlier */

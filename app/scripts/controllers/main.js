@@ -8,10 +8,25 @@
  * Controller of the bangularApp
  */
 angular.module('bangularApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, TodoService) {
+
+    $scope.newTodoSummary = '';
+    $scope.todoCollection = TodoService.getCollection();
+
+    $scope.addTodo = function() {
+
+      var newTodo = TodoService.getModel({
+        Summary: $scope.newTodoSummary
+      });
+
+      $scope.todoCollection.add(newTodo);
+
+      clearNewTodo();
+      
+    };
+
+    function clearNewTodo() {
+      $scope.newTodoSummary = '';
+    }
+
   });

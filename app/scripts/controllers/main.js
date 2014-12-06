@@ -13,15 +13,20 @@ angular.module('bangularApp')
     $scope.newTodoSummary = '';
     $scope.todoCollection = TodoService.getCollection();
 
+    $scope.todoCollection.$load();
+
     $scope.addTodo = function() {
 
       var newTodo = TodoService.getModel({
         Summary: $scope.newTodoSummary
       });
 
-      $scope.todoCollection.add(newTodo);
-
-      clearNewTodo();
+      newTodo
+        .$save()
+        .then(function() {
+          clearNewTodo();
+          $scope.todoCollection.add(newTodo);
+        });
       
     };
 

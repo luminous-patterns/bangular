@@ -27,7 +27,11 @@ angular.module('bangularApp')
     };
 
     $scope.saveSummary = function() {
-      $scope.editingSummary = false;
+      $scope.ngModel
+        .$save()
+        .then(function() {
+          $scope.editingSummary = false;
+        });
     };
 
     $scope.delete = function() {

@@ -43,11 +43,11 @@ angular
         if (typeof arguments[0] === 'object') {
           this.attributes = this.parse(arguments[0]);
           if (this.idAttribute in this.attributes) {
-            setID(this.attributes[this.idAttribute], this);
+            setID(this, this.attributes[this.idAttribute]);
           }
         }
         else {
-          setID(arguments[0], this);
+          setID(this, arguments[0]);
           this.attributes = {};
         }
 
@@ -87,7 +87,7 @@ angular
         var idAttribute = model.idAttribute;
 
         if (idAttribute) {
-          setID(response.data[idAttribute], model);
+          setID(model, response.data[idAttribute]);
         }
 
         // Emit a 'sync' event on this model
@@ -163,16 +163,16 @@ angular
       if (!this.id) {
         return deleteModel(this);
       }
-      return sync('delete', this);
+      return sync(this, 'delete');
     };
 
     BaseModel.prototype.$save = function() {
 
       if (this.isNew()) {
-        return sync('create', this);
+        return sync(this, 'create');
       }
 
-      return sync('save', this);
+      return sync(this, 'save');
 
     };
 
@@ -182,7 +182,7 @@ angular
         return $q(angular.noop);
       }
 
-      return sync('load', this);
+      return sync(this, 'load');
 
     };
 

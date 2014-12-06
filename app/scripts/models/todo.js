@@ -17,7 +17,7 @@ angular
 
       BaseModel.apply(this, arguments);
 
-      this.endPoint = 'todos';
+      this.endPoint = 'api/todos';
 
       this.setDefaults({
         'Summary'                   : '',

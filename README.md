@@ -14,7 +14,6 @@ Use this as a guide, not a final solution.  I'll add things to this repo over th
 
 ### Still to come
 
-- Simple RESTful web service in Node.js to demonstrate syncing models.
 - Tutorial / documentation
 
 ### Getting started
@@ -25,6 +24,12 @@ $ npm install
 $ bower install
 $ grunt serve
 ```
+
+### The REST web service
+
+To see this in action locally: grab a copy of the node.js REST web service from the [Bangular API] repo on GitHub and set it up.
+
+https://github.com/mycetophorae/bangular-api
 
 ### Thankyou Yeoman!
 
@@ -47,3 +52,4 @@ I have saved so much time over the last few months thanks to the [Yeoman] genera
 [Grunt]:http://gruntjs.com/
 [Gulp]:http://gulpjs.com
 [node.js]:http://nodejs.org
+[Bangular API]:https://github.com/mycetophorae/bangular-api
